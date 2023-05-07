@@ -13,21 +13,16 @@ docker build --no-cache -t web .
 
 #### build
 ```sh
-docker build --no-cache -t api \
-  --build-arg salt=xxx \
-  --build-arg iv=xxx \
-  --build-arg jwt-secret=xxx \
-  --build-arg mongo_user=xxx \
-  --build-arg mongo_pwd=xxx \
-  --build-arg mongo_host=xxx \
-  --build-arg redis_host=xxx \
-  --build-arg redis_pwd=xxx .
+docker build --no-cache -t api .
 ```
 
 ### docker-compose
 
 ```sh
-MONGO_USER=XXX MONGO_PWD=XXX REDIS_PWD=XXX docker-compose up -d
+MONGO_USER=XXX MONGO_PWD=XXX REDIS_HOST=XXX \
+REDIS_PWD=XXX MONGO_HOST=XXX SALT=XXX IV=XXXX \
+JWT_SECRET=XXXX CHATGPT_APIKEY=XXXX \
+docker-compose up -d
 ```
 
 ### create user

@@ -40,6 +40,16 @@ services:
   api:
     image: api:latest
     container_name: api
+    environment:
+      - SALT=${SALT}
+      - IV=${IV}
+      - JWT_SECRET=${JWT_SECRET}
+      - CHATGPT_APIKEY=${CHATGPT_APIKEY}
+      - MONGO_USER=${MONGO_USER}
+      - MONGO_PWD=${MONGO_PWD}
+      - MONGO_HOST=${MONGO_HOST}
+      - REDIS_HOST=${REDIS_HOST}
+      - REDIS_PWD=${REDIS_PWD}
     depends_on:
       - mongo
       - redis 
